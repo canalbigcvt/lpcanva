@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page com Imagem Responsiva e Checkout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+    }
+    .image-header {
+      width: 100%;
+      max-width: 100%;
+      display: none; /* Esconde por padrão */
+    }
+    .image-mobile {
+      display: none; /* Esconde por padrão */
+    }
+    .iframe-checkout {
+      width: 100%;
+      max-width: 1200px;
+      height: 70vh; /* Define a altura do checkout */
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Exibir a imagem do desktop para telas maiores */
+    @media (min-width: 768px) {
+      .image-desktop {
+        display: block; /* Exibe a imagem do desktop */
+      }
+    }
+
+    /* Exibir a imagem do mobile para telas menores */
+    @media (max-width: 767px) {
+      .image-mobile {
+        display: block; /* Exibe a imagem do mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Imagem para desktop -->
+    <img src="https://files.catbox.moe/7g9qvc.jpg" alt="Imagem para Desktop" class="image-header image-desktop">
+
+    <!-- Imagem para celular -->
+    <img src="https://files.catbox.moe/u3swtx.jpg" alt="Imagem para Celular" class="image-header image-mobile">
+
+    <!-- Checkout na parte de baixo -->
+    <h1>Finalize Sua Compra</h1>
+    <div class="iframe-checkout">
+      <iframe src="https://app.pushinpay.com.br/service/pay/9E8101D0-929F-46FF-8B9F-E21246DDBC69" title="Checkout"></iframe>
+    </div>
+  </div>
+</body>
+</html>
